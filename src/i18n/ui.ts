@@ -8,11 +8,11 @@ export const ui = {
     "nav.projects": "projects",
     "nav.work": "work",
 
-    "hero.badge": "Studying · open to research & collaboration",
+    "hero.badge": "AI undergrad @ NCWU · open to research & collaboration",
     "hero.greeting": "Hi, I'm",
-    "hero.role": "Researcher / Full-stack Engineer — Intelligent Systems · Retrieval · ML",
+    "hero.role": "AI Undergrad — Retrieval / RAG · Machine Learning · Applied Research",
     "hero.tagline":
-      "One-line positioning (placeholder) — I turn research into systems that ship. This is my portal; scroll to explore patents, papers and project details.",
+      "I turn research into systems that ship — from a filed patent on intelligent bid-document analysis to empirical retrieval studies and deep-learning signal separation. Scroll for patents, papers and projects.",
     "hero.viewProjects": "View projects",
     "hero.contact": "Get in touch",
     "hero.scroll": "scroll",
@@ -63,11 +63,11 @@ export const ui = {
     "nav.projects": "项目",
     "nav.work": "经历",
 
-    "hero.badge": "在读 · 开放科研与项目合作",
+    "hero.badge": "华水人工智能在读 · 开放科研与合作",
     "hero.greeting": "你好，我是",
-    "hero.role": "研究者 / 全栈工程师 — 智能系统 · 检索 · 机器学习",
+    "hero.role": "人工智能本科 — 检索 / RAG · 机器学习 · 应用研究",
     "hero.tagline":
-      "一句话定位（占位）——我把研究做成能用的系统。这里是我的项目与成果门户，下滑进入专利、论文与项目详情。",
+      "我把研究做成能用的系统——从已公布的「标书智能分析」发明专利，到检索增强的实证研究与深度学习信号分离。下滑看专利、论文与项目。",
     "hero.viewProjects": "查看项目",
     "hero.contact": "联系我",
     "hero.scroll": "下滑",

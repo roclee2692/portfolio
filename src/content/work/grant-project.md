@@ -1,10 +1,10 @@
 ---
-company: "Grant / Bid Project"
-company_zh: "标书 / 标项目"
-role: "Core Developer (placeholder)"
-role_zh: "核心开发（占位）"
-dateStart: "2024-01-01"
-dateEnd: "2024-12-01"
+company: "University–Enterprise Project · Bid-Analysis System"
+company_zh: "校企合作项目 · 标书智能分析系统"
+role: "Core Developer"
+role_zh: "核心开发"
+dateStart: "2025-03-01"
+dateEnd: "2026-03-01"
 ---
 
-Placeholder — led system design and implementation of a grant project; results filed as an invention patent. Replace once you send details.
+Core developer on my advisor's university–enterprise collaboration: requirement analysis, architecture design and iterative development of an intelligent bid-document analysis system. Gained enterprise-grade software-engineering and vertical-domain AI experience; results filed as an invention patent (published).

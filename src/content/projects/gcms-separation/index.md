@@ -1,18 +1,21 @@
 ---
-title: "GC-MS Signal Separation"
-title_zh: "GC-MS 信号分离"
-description: "Placeholder — separation and resolution of overlapping GC-MS signals."
-description_zh: "占位文案 —— 气质联用（GC-MS）重叠信号的分离与解析方法。"
-date: "2024-08-01"
+title: "GC-MS Signal Deconvolution & Identification Engine"
+title_zh: "GC-MS 色谱信号解耦与成分识别引擎"
+description: "End-to-end deep learning for GC-MS: identify components of essential-oil mixtures and predict blend ratios directly from 1D chromatographic signals."
+description_zh: "端到端深度学习：直接从一维色谱信号（RT-TIC）识别精油混合物成分，并预测核心原料的混合配比。"
+date: "2026-05-03"
+featured: true
 linkType: "repo"
-stack: ["Python", "NumPy", "SciPy", "Signal"]
-highlight: "Placeholder: overlapping-peak separation, +XX% recovery"
-highlight_zh: "占位：重叠峰分离，回收率提升 XX%"
-repoURL: "https://github.com/your-handle/gcms-separation"
+stack: ["Python", "Deep Learning", "PyTorch", "GC-MS", "Synthetic Data"]
+highlight: "74,820 synthetic samples · 87 monomers · enterprise collaboration"
+highlight_zh: "74,820 合成样本 · 87 种单体 · 校企合作落地探索"
+repoURL: "https://github.com/roclee2692/GC-MS-Signal-Separation"
 ---
 
-> ⚠️ Placeholder content — replace once you send the real details.
+Industrial data-science project from a real enterprise need: deconvolve overlapping GC-MS signals of complex essential-oil mixtures, and predict the blend ratio of core raw materials — without manual expert peak-matching.
 
-## Overview
+## Approach
 
-Placeholder: GC-MS signal separation method and results.
+- **Synthetic-data baseline**: since perfectly-labelled real mixtures are costly, built a large synthetic corpus of chromatograms.
+- **Scaled from 10 → 87 monomers**: all pairwise `C(87,2)` combinations, expanding to **74,820 samples** for large-scale ablation.
+- End-to-end model consuming 1D RT-TIC signals → component identification + ratio prediction.

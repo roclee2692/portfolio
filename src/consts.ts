@@ -2,7 +2,7 @@ import type { Site, Metadata, Socials } from "@types";
 
 export const SITE: Site = {
   NAME: "李鹏",
-  NAME_EN: "Li Peng",
+  NAME_EN: "Raelon Veritas Lee",
   EMAIL: "nahida10y27@gmail.com", // TODO: 占位 — 替换成对外展示的邮箱
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 3,

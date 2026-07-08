@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import { dateRange } from "@lib/utils";
+import { useTranslations, tf, type Lang } from "@i18n/ui";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const collection = (await getCollection("work"))
+  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf());
+
+const work = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  })
+);
+---
+
+<PageLayout title={t("meta.work.title")} description={t("meta.work.desc")} lang={lang}>
+  <div class="wrap-tight">
+    <SectionHeader index="▹" subtitle={t("section.experience.kicker")} title={t("section.experience.title")} />
+    <ol class="mt-10 space-y-8">
+      {work.map((entry, i) => (
+        <li class="reveal relative border-l-2 border-[rgb(var(--line)/0.12)] pl-6" style={`transition-delay:${i * 80}ms`}>
+          <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-ink"></span>
+          <div class="font-mono text-xs text-accent">{dateRange(entry.data.dateStart, entry.data.dateEnd)}</div>
+          <div class="mt-1 font-display text-lg font-semibold text-black dark:text-white">{tf(entry.data, "company", lang)}</div>
+          <div class="text-sm opacity-70">{tf(entry.data, "role", lang)}</div>
+          <article class="mt-2 text-sm"><entry.Content /></article>
+        </li>
+      ))}
+    </ol>
+  </div>
+</PageLayout>

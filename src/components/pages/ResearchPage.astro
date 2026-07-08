@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import ResearchCard from "@components/ResearchCard.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import { useTranslations, type Lang } from "@i18n/ui";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const research = (await getCollection("research"))
+  .filter(item => !item.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<PageLayout title={t("meta.research.title")} description={t("meta.research.desc")} lang={lang}>
+  <div class="wrap-tight">
+    <SectionHeader index="◆" subtitle={t("section.research.kicker")} title={t("section.research.title")} color="accent2" />
+    <p class="reveal mt-3 max-w-xl">{t("meta.research.desc")}</p>
+    <ul class="mt-10 grid gap-6 md:grid-cols-2">
+      {research.map((item, i) => (
+        <li class="reveal h-full" style={`transition-delay:${i * 80}ms`}>
+          <ResearchCard entry={item} lang={lang} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</PageLayout>

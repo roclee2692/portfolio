@@ -1,0 +1,38 @@
+---
+import Link from "@components/Link.astro";
+
+type Props = {
+  index: string;
+  title: string;
+  subtitle?: string;
+  href?: string;
+  linkLabel?: string;
+  color?: "accent" | "accent2";
+};
+
+const { index, title, subtitle, href, linkLabel = "查看全部", color = "accent" } = Astro.props;
+const c = color === "accent2" ? "text-accent2" : "text-accent";
+const line = color === "accent2"
+  ? "from-accent2/50"
+  : "from-accent/50";
+---
+
+<div class="reveal">
+  <div class="flex items-end justify-between gap-4">
+    <div>
+      <div class={`flex items-center gap-2 font-mono text-xs sm:text-sm ${c}`}>
+        <span>{index}</span>
+        <span class={`h-px w-8 bg-gradient-to-r ${line} to-transparent`}></span>
+        {subtitle && <span class="opacity-80">{subtitle}</span>}
+      </div>
+      <h2 class="mt-2 font-display text-2xl sm:text-3xl font-semibold text-black dark:text-white">
+        {title}
+      </h2>
+    </div>
+    {href && (
+      <Link href={href}>
+        <span class="whitespace-nowrap font-mono text-xs sm:text-sm">{linkLabel} →</span>
+      </Link>
+    )}
+  </div>
+</div>

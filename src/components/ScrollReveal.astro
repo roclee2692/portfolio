@@ -1,0 +1,26 @@
+---
+// 基于 IntersectionObserver 的滚动进入动效；兼容 Astro 视图切换
+---
+<script is:inline>
+  function initReveal() {
+    const els = document.querySelectorAll(".reveal:not(.in)");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach((e) => e.classList.add("in"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.06 }
+    );
+    els.forEach((e) => io.observe(e));
+  }
+  document.addEventListener("DOMContentLoaded", initReveal);
+  document.addEventListener("astro:after-swap", initReveal);
+</script>

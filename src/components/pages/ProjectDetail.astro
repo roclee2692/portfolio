@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import { readingTime } from "@lib/utils";
+import BackToPrev from "@components/BackToPrev.astro";
+import Link from "@components/Link.astro";
+import { useTranslations, tf, langPrefix, type Lang } from "@i18n/ui";
+
+type Props = {
+  project: CollectionEntry<"projects">;
+  lang: Lang;
+};
+
+const { project, lang } = Astro.props;
+const t = useTranslations(lang);
+const { Content } = await project.render();
+const title = tf(project.data, "title", lang);
+const highlight = tf(project.data, "highlight", lang);
+const desc = tf(project.data, "description", lang);
+---
+
+<PageLayout title={title} description={desc} lang={lang}>
+  <div class="wrap-tight">
+    <div class="animate">
+      <BackToPrev href={`${langPrefix(lang)}/projects`}>{t("detail.back")}</BackToPrev>
+    </div>
+    <div class="my-10 space-y-1">
+      <div class="animate flex items-center gap-1.5">
+        <div class="font-base text-sm"><FormattedDate date={project.data.date} /></div>
+        &bull;
+        <div class="font-base text-sm">{readingTime(project.body)}</div>
+      </div>
+      <div class="animate font-display text-2xl font-semibold text-black dark:text-white">{title}</div>
+      {highlight && <p class="animate font-mono text-sm text-accent">{highlight}</p>}
+      {project.data.stack.length > 0 && (
+        <ul class="animate flex flex-wrap gap-1.5 pt-1">
+          {project.data.stack.map((tech) => <li class="pill">{tech}</li>)}
+        </ul>
+      )}
+      {project.data.linkType === "private" ? (
+        <div class="animate pt-1"><span class="badge-muted">🔒 {t("detail.private")}</span></div>
+      ) : (
+        (project.data.demoURL || project.data.repoURL) && (
+          <nav class="animate flex gap-1 pt-1">
+            {project.data.demoURL && <Link href={project.data.demoURL} external>{t("detail.demo")}</Link>}
+            {project.data.demoURL && project.data.repoURL && <span>/</span>}
+            {project.data.repoURL && <Link href={project.data.repoURL} external>{t("detail.repo")}</Link>}
+          </nav>
+        )
+      )}
+    </div>
+    <article class="animate">
+      <Content />
+    </article>
+  </div>
+</PageLayout>

@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { useTranslations, tf, type Lang } from "@i18n/ui";
+
+type Props = {
+  entry: CollectionEntry<"research">;
+  lang: Lang;
+};
+
+const { entry, lang } = Astro.props;
+const t = useTranslations(lang);
+const d = entry.data;
+const title = tf(d, "title", lang);
+const description = tf(d, "description", lang);
+const status = tf(d, "status", lang);
+const { type, id, url, cover } = d;
+const typeLabel = type === "patent" ? t("research.patent") : t("research.paper");
+---
+
+<div class="card card-teal group flex h-full gap-4 p-4 sm:p-5">
+  <div class="hidden shrink-0 sm:block">
+    {cover ? (
+      <img
+        src={cover}
+        alt={title}
+        class="h-28 w-20 rounded-md border border-[rgb(var(--line)/0.15)] object-cover shadow-sm"
+      />
+    ) : (
+      <div class="relative flex h-28 w-20 items-center justify-center overflow-hidden rounded-md border border-accent2/30 bg-gradient-to-br from-accent2/25 via-accent2/5 to-transparent shadow-sm">
+        <span class="font-mono text-[10px] uppercase tracking-[0.15em] text-accent2">
+          {type}
+        </span>
+      </div>
+    )}
+  </div>
+
+  <div class="flex flex-1 flex-col gap-2">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="badge-accent2">{typeLabel}</span>
+      {status && <span class="badge-muted">{status}</span>}
+    </div>
+
+    <h3 class="font-display text-base font-semibold text-black dark:text-white">
+      {url ? (
+        <a href={url} target="_blank" rel="noopener noreferrer" class="transition-colors group-hover:text-accent2">
+          {title}
+        </a>
+      ) : (
+        title
+      )}
+    </h3>
+
+    <p class="text-sm">{description}</p>
+
+    {id && (
+      <p class="mt-auto pt-1 font-mono text-xs text-black/50 dark:text-white/50">{id}</p>
+    )}
+  </div>
+</div>

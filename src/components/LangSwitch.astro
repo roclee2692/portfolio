@@ -1,0 +1,32 @@
+---
+import { getLangFromPath, stripLang, localizePath } from "@i18n/ui";
+
+const pathname = Astro.url.pathname;
+const lang = getLangFromPath(pathname);
+const canonical = stripLang(pathname);
+const enHref = localizePath(canonical, "en");
+const zhHref = localizePath(canonical, "zh");
+
+const base = "px-2 py-0.5 rounded-full transition-colors";
+const active = "bg-accent/15 text-accent";
+const idle = "text-black/45 dark:text-white/45 hover:text-black dark:hover:text-white";
+---
+
+<div
+  class="inline-flex items-center gap-0.5 rounded-full border border-[rgb(var(--line)/0.15)] p-0.5 font-mono text-xs"
+  role="group"
+  aria-label="Language"
+>
+  <a href={enHref} data-setlang="en" aria-current={lang === "en" ? "true" : undefined} class={`${base} ${lang === "en" ? active : idle}`}>EN</a>
+  <a href={zhHref} data-setlang="zh" aria-current={lang === "zh" ? "true" : undefined} class={`${base} ${lang === "zh" ? active : idle}`}>中</a>
+</div>
+
+<script is:inline>
+  document.addEventListener("click", (e) => {
+    const a = e.target instanceof Element ? e.target.closest("[data-setlang]") : null;
+    if (a) {
+      document.cookie =
+        "lang=" + a.getAttribute("data-setlang") + "; path=/; max-age=31536000; samesite=lax";
+    }
+  });
+</script>

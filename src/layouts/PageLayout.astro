@@ -1,0 +1,37 @@
+---
+import Head from "@components/Head.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Background from "@components/Background.astro";
+import ScrollReveal from "@components/ScrollReveal.astro";
+import { SITE } from "@consts";
+import { getLangFromPath, type Lang } from "@i18n/ui";
+
+type Props = {
+  title: string;
+  description: string;
+  bleed?: boolean;
+  lang?: Lang;
+};
+
+const { title, description, bleed = false } = Astro.props;
+const lang: Lang = Astro.props.lang ?? getLangFromPath(Astro.url.pathname);
+const htmlLang = lang === "zh" ? "zh-CN" : "en";
+const siteName = lang === "zh" ? SITE.NAME : SITE.NAME_EN;
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <Head title={`${title} | ${siteName}`} description={description} />
+  </head>
+  <body>
+    <Background />
+    <Header lang={lang} />
+    <main class={bleed ? "" : "pt-32 pb-16"}>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <ScrollReveal />
+  </body>
+</html>

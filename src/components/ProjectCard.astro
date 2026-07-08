@@ -1,0 +1,89 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { useTranslations, tf, langPrefix, type Lang } from "@i18n/ui";
+
+type Props = {
+  entry: CollectionEntry<"projects">;
+  lang: Lang;
+};
+
+const { entry, lang } = Astro.props;
+const t = useTranslations(lang);
+const d = entry.data;
+const title = tf(d, "title", lang);
+const description = tf(d, "description", lang);
+const highlight = tf(d, "highlight", lang);
+const { cover, stack, linkType, demoURL, repoURL, featured } = d;
+const href = `${langPrefix(lang)}/projects/${entry.slug}`;
+---
+
+<div class="card group flex h-full flex-col overflow-hidden">
+  <a href={href} class="relative block overflow-hidden">
+    {cover ? (
+      <img
+        src={cover}
+        alt={title}
+        class="h-40 w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+      />
+    ) : (
+      <div class="relative flex h-36 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-accent/20 via-accent/5 to-transparent">
+        <div
+          class="absolute inset-0 opacity-40"
+          style="background-image: radial-gradient(circle, rgb(var(--accent) / 0.25) 1px, transparent 1px); background-size: 16px 16px;"
+        >
+        </div>
+        <span class="relative font-mono text-xs uppercase tracking-[0.2em] text-accent/80">
+          {entry.slug}
+        </span>
+      </div>
+    )}
+    {featured && (
+      <span class="absolute right-2 top-2 badge bg-accent text-white dark:text-ink">
+        ★ {t("card.featured")}
+      </span>
+    )}
+  </a>
+
+  <div class="flex flex-1 flex-col gap-3 p-4">
+    <a href={href} class="block">
+      <h3 class="font-display text-lg font-semibold text-black dark:text-white transition-colors group-hover:text-accent">
+        {title}
+      </h3>
+      <p class="mt-1 text-sm">{description}</p>
+    </a>
+
+    {stack.length > 0 && (
+      <ul class="flex flex-wrap gap-1.5">
+        {stack.map((tech) => (
+          <li class="pill">{tech}</li>
+        ))}
+      </ul>
+    )}
+
+    {highlight && (
+      <p class="font-mono text-xs text-black/60 dark:text-white/60">{highlight}</p>
+    )}
+
+    <div class="mt-auto flex flex-wrap items-center gap-2 border-t border-[rgb(var(--line)/0.08)] pt-3">
+      {linkType === "private" ? (
+        <span class="badge-muted">🔒 {t("card.private")}</span>
+      ) : (
+        <>
+          {demoURL && (
+            <a href={demoURL} target="_blank" rel="noopener noreferrer" class="badge-accent hover:underline">
+              ↗ {t("card.demo")}
+            </a>
+          )}
+          {repoURL && (
+            <a href={repoURL} target="_blank" rel="noopener noreferrer" class="badge-muted hover:text-black dark:hover:text-white">
+              {t("card.code")}
+            </a>
+          )}
+        </>
+      )}
+      <a href={href} class="ml-auto font-mono text-xs text-accent transition-transform group-hover:translate-x-0.5">
+        {t("card.details")} →
+      </a>
+    </div>
+  </div>
+</div>

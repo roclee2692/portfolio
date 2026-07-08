@@ -7,4 +7,4 @@ dateStart: "2025-09-01"
 dateEnd: "Now"
 ---
 
-One-on-one research advising (advisor: Yang Yangrui). Transitioned from engineering to academic research: literature search & close reading on RAG, knowledge graphs and retrieval reranking; independently completed a full empirical study (topic → design → analysis → writing). Studied the *SciToolAgent* paper (*Nature Computational Science*) and presented it to the group.
+One-on-one research advising (advisor: Yang Yangrui). After building programming and modelling foundations through contests, shifted focus to research and academic writing: literature search & close reading on RAG, knowledge graphs and retrieval reranking; independently completed a full empirical study (topic → design → analysis → writing). Studied the *SciToolAgent* paper (*Nature Computational Science*, 2025) and presented it to the group.

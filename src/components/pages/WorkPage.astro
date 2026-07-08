@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import SectionHeader from "@components/SectionHeader.astro";
+import AwardsList from "@components/AwardsList.astro";
 import { dateRange } from "@lib/utils";
 import { useTranslations, tf, type Lang } from "@i18n/ui";
 
@@ -34,5 +35,12 @@ const work = await Promise.all(
         </li>
       ))}
     </ol>
+
+    <div class="mt-16">
+      <SectionHeader index="◆" subtitle={t("section.awards.kicker")} title={t("section.awards.title")} color="accent2" />
+      <div class="mt-8">
+        <AwardsList lang={lang} />
+      </div>
+    </div>
   </div>
 </PageLayout>

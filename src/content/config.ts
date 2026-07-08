@@ -65,4 +65,22 @@ const research = defineCollection({
   }),
 });
 
-export const collections = { blog, work, projects, research };
+// 竞赛与荣誉
+const awards = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    title_zh: z.string().optional(),
+    award: z.string(),          // 如 "Provincial First Prize"
+    award_zh: z.string().optional(),
+    issuer: z.string().optional(),
+    issuer_zh: z.string().optional(),
+    category: z.string().optional(),
+    category_zh: z.string().optional(),
+    level: z.enum(["national", "provincial", "school"]).default("provincial"),
+    date: z.coerce.date(),
+    url: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, work, projects, research, awards };

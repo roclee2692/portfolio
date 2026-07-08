@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import { useTranslations, tf, type Lang } from "@i18n/ui";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const awards = (await getCollection("awards"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const levelClass = (lvl: string) =>
+  lvl === "national" ? "badge-accent" : lvl === "provincial" ? "badge-accent2" : "badge-muted";
+---
+
+<ul class="flex flex-col gap-4">
+  {awards.map((a, i) => {
+    const d = a.data;
+    return (
+      <li class="reveal card flex flex-col gap-2 p-4 sm:flex-row sm:items-center sm:gap-4" style={`transition-delay:${i * 70}ms`}>
+        <div class="flex shrink-0 items-center gap-2">
+          <span class={levelClass(d.level)}>{t(`level.${d.level}` as any)}</span>
+          <span class="badge bg-accent/10 text-accent">🏆 {tf(d, "award", lang)}</span>
+        </div>
+        <div class="min-w-0 flex-1">
+          <div class="font-display font-semibold text-black dark:text-white">
+            {d.url ? (
+              <a href={d.url} target="_blank" rel="noopener noreferrer" class="hover:text-accent">{tf(d, "title", lang)}</a>
+            ) : (
+              tf(d, "title", lang)
+            )}
+          </div>
+          <div class="text-sm opacity-70">
+            {[tf(d, "category", lang), tf(d, "issuer", lang)].filter(Boolean).join(" · ")}
+          </div>
+        </div>
+        <time class="shrink-0 font-mono text-xs text-black/50 dark:text-white/50">
+          {d.date.getFullYear()}.{String(d.date.getMonth() + 1).padStart(2, "0")}
+        </time>
+      </li>
+    );
+  })}
+</ul>

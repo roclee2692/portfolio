@@ -4,6 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import ResearchCard from "@components/ResearchCard.astro";
 import SectionHeader from "@components/SectionHeader.astro";
+import AwardsList from "@components/AwardsList.astro";
 import Link from "@components/Link.astro";
 import { dateRange } from "@lib/utils";
 import { SITE, SOCIALS } from "@consts";
@@ -159,6 +160,14 @@ const stats = [
           </li>
         ))}
       </ol>
+    </div>
+  </section>
+
+  {/* ══ 竞赛与荣誉 ══ */}
+  <section class="wrap py-20 sm:py-28">
+    <SectionHeader index="04" subtitle={t("section.awards.kicker")} title={t("section.awards.title")} color="accent2" />
+    <div class="mt-10">
+      <AwardsList lang={lang} />
     </div>
   </section>
 

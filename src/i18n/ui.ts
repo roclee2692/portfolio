@@ -25,6 +25,11 @@ export const ui = {
     "section.research.title": "Research",
     "section.experience.kicker": "timeline",
     "section.experience.title": "Experience",
+    "section.awards.kicker": "honors & contests",
+    "section.awards.title": "Awards & Competitions",
+    "level.national": "National",
+    "level.provincial": "Provincial",
+    "level.school": "School",
     "common.viewAll": "View all",
 
     "card.featured": "Featured",
@@ -80,6 +85,11 @@ export const ui = {
     "section.research.title": "专利与论文",
     "section.experience.kicker": "时间线",
     "section.experience.title": "经历",
+    "section.awards.kicker": "竞赛与荣誉",
+    "section.awards.title": "竞赛与荣誉",
+    "level.national": "国家级",
+    "level.provincial": "省级",
+    "level.school": "校级",
     "common.viewAll": "查看全部",
 
     "card.featured": "精选",

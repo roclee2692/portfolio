@@ -4,6 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://your-domain.dev", // TODO: 占位 — 换成你的正式域名
+  site: "https://portfolio-6mr.pages.dev", // Cloudflare Pages（后续绑定自定义域名后改这里）
   integrations: [mdx(), sitemap(), tailwind()],
 });

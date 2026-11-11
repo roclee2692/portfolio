@@ -3,10 +3,11 @@ import type { Site, Metadata, Socials } from "@types";
 export const SITE: Site = {
   NAME: "李鹏",
   NAME_EN: "Raelon Veritas Lee",
-  EMAIL: "nahida10y27@gmail.com", // TODO: 占位 — 替换成对外展示的邮箱
+  EMAIL: "roclee2692@gmail.com",
+  PHONE: "19293769862",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 3,
-  NUM_PROJECTS_ON_HOMEPAGE: 3,
+  NUM_PROJECTS_ON_HOMEPAGE: 6,
   NUM_RESEARCH_ON_HOMEPAGE: 4,
 };
 
@@ -32,16 +33,22 @@ export const PROJECTS: Metadata = {
 
 export const RESEARCH: Metadata = {
   TITLE: "专利与论文",
-  DESCRIPTION: "已申请专利与发表 / 在投论文。",
+  DESCRIPTION: "已公布的专利与进行中的研究。",
 };
 
 export const SOCIALS: Socials = [
   {
     NAME: "github",
-    HREF: "https://github.com/your-handle", // TODO: 占位 — 你的 GitHub
+    HREF: "https://github.com/roclee2692",
   },
-  {
-    NAME: "email",
-    HREF: "mailto:nahida10y27@gmail.com", // TODO: 占位
-  },
+];
+
+// A deliberate order for the projects most relevant to the current internship focus.
+export const FEATURED_PROJECTS = [
+  "bid-analysis",
+  "context-retrieval",
+  "gcms-separation",
+  "mcm-icm-2025",
+  "ncwu-smartcity",
+  "rps-yolov8",
 ];

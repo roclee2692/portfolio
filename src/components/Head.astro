@@ -46,7 +46,9 @@ const { title, description, image = "/nano.png" } = Astro.props;
       }
       var nav = (navigator.language || navigator.userLanguage || "").toLowerCase();
       if (nav.indexOf("zh") === 0 && !isZh) location.replace("/zh" + (p === "/" ? "" : p));
-    } catch (e) {}
+    } catch (e) {
+      // Language detection is optional; the current page remains usable.
+    }
   })();
 </script>
 

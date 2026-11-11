@@ -16,7 +16,7 @@ export const ui = {
     "hero.viewProjects": "View projects",
     "hero.contact": "Get in touch",
     "hero.scroll": "scroll",
-    "stats.location": "China",
+    "stats.location": "Zhengzhou, China",
     "stats.status": "open to work",
 
     "section.projects.kicker": "selected work",
@@ -33,7 +33,7 @@ export const ui = {
     "common.viewAll": "View all",
 
     "card.featured": "Featured",
-    "card.private": "Private · demo on request",
+    "card.private": "Private project",
     "card.demo": "Live demo",
     "card.code": "View code",
     "card.details": "Details",
@@ -48,7 +48,7 @@ export const ui = {
     "detail.back": "Back to projects",
     "detail.demo": "demo",
     "detail.repo": "repo",
-    "detail.private": "Private · demo on request",
+    "detail.private": "Private project · source not public",
     "detail.placeholder": "Placeholder content — final copy to be written per language.",
 
     "meta.home.title": "Home",
@@ -57,7 +57,7 @@ export const ui = {
     "meta.projects.title": "Projects",
     "meta.projects.desc": "Selected projects — with architecture, demos and code links.",
     "meta.research.title": "Research",
-    "meta.research.desc": "Filed patents and published / submitted papers.",
+    "meta.research.desc": "A published patent application and research in progress.",
     "meta.work.title": "Experience",
     "meta.work.desc": "Research and project experience.",
 
@@ -76,7 +76,7 @@ export const ui = {
     "hero.viewProjects": "查看项目",
     "hero.contact": "联系我",
     "hero.scroll": "下滑",
-    "stats.location": "中国",
+    "stats.location": "郑州",
     "stats.status": "开放合作",
 
     "section.projects.kicker": "精选",
@@ -93,7 +93,7 @@ export const ui = {
     "common.viewAll": "查看全部",
 
     "card.featured": "精选",
-    "card.private": "私有 · 可授权演示",
+    "card.private": "校企项目 · 代码未公开",
     "card.demo": "访问 Demo",
     "card.code": "查看代码",
     "card.details": "详情",
@@ -107,7 +107,7 @@ export const ui = {
     "detail.back": "返回项目",
     "detail.demo": "演示",
     "detail.repo": "代码",
-    "detail.private": "私有 · 可授权演示",
+    "detail.private": "校企项目 · 代码未公开",
     "detail.placeholder": "内容为占位——最终以对应语言撰写。",
 
     "meta.home.title": "首页",
@@ -115,7 +115,7 @@ export const ui = {
     "meta.projects.title": "项目",
     "meta.projects.desc": "精选项目 — 附架构、Demo 与代码链接。",
     "meta.research.title": "专利与论文",
-    "meta.research.desc": "已申请专利与发表 / 在投论文。",
+    "meta.research.desc": "已公布的专利与进行中的研究。",
     "meta.work.title": "经历",
     "meta.work.desc": "科研与项目经历。",
 

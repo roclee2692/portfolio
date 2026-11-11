@@ -2,7 +2,7 @@
 title: "Intelligent Bid-Document Analysis System"
 title_zh: "标书智能分析系统"
 description: "University–enterprise project: intelligent parsing and fast screening of bidding documents. Core developer through requirements, architecture and iteration — results filed as an invention patent (published)."
-description_zh: "校企合作项目：招投标文档的智能解析与快速筛选。全程参与需求分析、架构设计与迭代开发；成果已申请发明专利并获公布。"
+description_zh: "校企合作项目：解析招标要求，抽取企业资质与业绩，并支持多阶段匹配。相关发明专利已公布。"
 date: "2026-04-01"
 featured: true
 linkType: "private"
@@ -19,4 +19,4 @@ Deeply involved in my advisor's university–enterprise collaboration to build a
 - Vertical-domain AI landed into an enterprise workflow
 - Results **filed as an invention patent, now published**
 
-> Repository is private (enterprise project); a walkthrough / demo can be authorized on request.
+> The enterprise-project repository is not public.

@@ -6,8 +6,8 @@ description_zh: "「善水书院」学生劳动志愿计时与积分兑换系统
 date: "2025-11-01"
 linkType: "repo"
 stack: ["WeChat Mini-Program", "Cloud Functions", "JavaScript"]
-highlight: "Deployed for a real college · cloud-function backend"
-highlight_zh: "服务真实书院场景 · 云函数后端"
+highlight: "College-oriented scenario · cloud-function backend"
+highlight_zh: "面向书院场景 · 云函数后端"
 repoURL: "https://github.com/roclee2692/ss-college-volunteer-points"
 ---
 

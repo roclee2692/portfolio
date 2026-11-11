@@ -17,6 +17,8 @@ const work = defineCollection({
     role: z.string(),
     dateStart: z.coerce.date(),
     dateEnd: z.union([z.coerce.date(), z.string()]),
+    draft: z.boolean().optional(),
+    description_zh: z.string().optional(),
     // 双语：中文覆盖（基字段为英文默认）
     company_zh: z.string().optional(),
     role_zh: z.string().optional(),

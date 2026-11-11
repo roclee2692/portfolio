@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { useTranslations, tf, langPrefix, type Lang } from "@i18n/ui";
+import { FEATURED_PROJECTS } from "@consts";
 
 type Props = {
   entry: CollectionEntry<"projects">;
@@ -13,7 +14,8 @@ const d = entry.data;
 const title = tf(d, "title", lang);
 const description = tf(d, "description", lang);
 const highlight = tf(d, "highlight", lang);
-const { cover, stack, linkType, demoURL, repoURL, featured } = d;
+const { cover, stack, linkType, demoURL, repoURL } = d;
+const featured = FEATURED_PROJECTS.includes(entry.slug);
 const href = `${langPrefix(lang)}/projects/${entry.slug}`;
 ---
 

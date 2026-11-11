@@ -7,12 +7,12 @@ date: "2026-06-15"
 type: "paper"
 status: "In preparation (unpublished)"
 status_zh: "在写 · 未发表"
-id: "2×2 ablation · n=30 significance test · code open-sourced"
+id: "Comparative retrieval experiments · code open-sourced · research in progress"
 url: "https://github.com/roclee2692/contextual-retrieval-by-anthropic"
 ---
 
 Completed the full research loop independently under one-on-one advising: topic, design, analysis and writing.
 
 - **Corpus**: real water-conservancy flood-prevention plans — 6 normative documents, ~230k characters, 1,080 semantic chunks.
-- **Design**: 2×2 ablation with statistical significance testing (n=30), comparing hybrid-retrieval baseline, Contextual Retrieval, knowledge graph, and Cross-Encoder reranking.
-- **Finding**: reveals the applicability boundary of CR in Chinese vertical domains and the decisive corrective role of reranking. Experiment code is open-sourced.
+- **Design**: comparative experiments on hybrid retrieval, Contextual Retrieval, knowledge graphs and reranking. Earlier and later evaluations used different datasets and measures and should not be directly compared.
+- **Limits**: the n=30 significance test concerned similarity scores, not a demonstrated statistically significant gain in retrieval quality. Source documents and all later evaluation artefacts are not public.

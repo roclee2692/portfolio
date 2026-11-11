@@ -7,7 +7,8 @@ date: "2026-06-09"
 type: "patent"
 status: "Application published"
 status_zh: "申请已公布"
-id: "申请号 202610250247.1 · 公布于 2026-06-09（第 42 卷 2401 期）"
+id: "Application 202610250247.1 · published 2026-06-09"
+id_zh: "申请号 202610250247.1 · 2026-06-09 公布"
 # url: "https://..."             # TODO: 国家知识产权局公布检索页
 # cover: "/covers/patent-1.png" # TODO: 公布通知书缩略图
 ---

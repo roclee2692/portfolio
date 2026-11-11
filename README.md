@@ -1,64 +1,32 @@
-![Astro Nano](_astro_nano.png)
+# 李鹏的个人作品集
 
-Astro Nano is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
+[访问中文作品集](https://portfolio-6mr.pages.dev/zh/) · [GitHub](https://github.com/roclee2692)
 
-Built with Astro, Tailwind and Typescript, an no frameworks.
+展示 AI 应用、信息检索与机器学习相关的项目实践、科研经历和竞赛成果。网站支持中英文，每个项目提供背景、实现过程、结果及必要的验证边界，公开项目可跳转至对应代码仓库。
 
-It was designed as an even more minimal theme than my popular theme [Astro Sphere](https://github.com/markhorn-dev/astro-sphere)
+## 精选项目
 
-## 🚀 Deploy your own
+- **标书智能分析系统**：参与招标要求解析、企业资质抽取和多阶段匹配的校企合作项目。企业项目代码未公开，相关发明专利申请已公布。
+- **上下文检索实证研究**：比较混合检索、Contextual Retrieval、知识图谱和重排序；对不同阶段的评价口径与数据公开范围作说明。
+- **GC-MS 色谱成分识别**：构建 87 类、74,820 条合成样本，探索一维色谱成分识别及真实混合样本的迁移差距。
+- **数学建模竞赛**：三人团队完成 2025 年全国大学生数学建模竞赛 C 题，获得河南赛区一等奖。
+- **智慧武汉 GIS 与手势检测**：分别展示团队可视化开发和 YOLOv8 训练、验证与摄像头推理实践。
 
-[![Deploy with Vercel](_deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-nano)  [![Deploy with Netlify](_deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-nano)
+更多项目及来源链接可在[项目列表](https://portfolio-6mr.pages.dev/zh/projects)查看。
 
-## 📋 Features
+## 本地开发
 
-- ✅ 100/100 Lighthouse performance
-- ✅ Responsive
-- ✅ Accessible
-- ✅ SEO-friendly
-- ✅ Typesafe
-- ✅ Minimal style
-- ✅ Light/Dark Theme
-- ✅ Animated UI
-- ✅ Tailwind styling
-- ✅ Auto generated sitemap
-- ✅ Auto generated RSS Feed
-- ✅ Markdown support
-- ✅ MDX Support (components in your markdown)
+项目基于 Astro、TypeScript 和 Tailwind CSS，通过 Markdown 管理项目与研究条目。安装依赖后在项目根目录运行：
 
-## 💯 Lighthouse score
-![Astro Nano Lighthouse Score](_lighthouse.png)
+```bash
+npm install
+npm run dev        # 本地开发
+npm run build      # 类型检查并构建到 dist/
+npm run lint       # ESLint 检查
+```
 
-## 🕊️ Lightweight
-No frameworks or added bulk
+网站使用 Cloudflare Pages 部署；`functions/` 包含部署环境使用的语言识别中间件。
 
-## ⚡︎ Fast
-Rendered in ~40ms on localhost
+## 说明与致谢
 
-## 📄 Configuration
-
-The blog posts on the demo serve as the documentation and configuration.
-
-## 💻 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, etc
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run dev:network`     | Starts local dev server on local network         |
-| `npm run sync`            | Generates TypeScript types for all Astro modules.|
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run preview:network` | Preview build on local network                   |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-| `npm run lint`            | Run ESLint                                       |
-| `npm run lint:fix`        | Auto-fix ESLint issues                           |
-
-## 🏛️ License
-
-MIT
+本项目基于 [Astro Nano](https://github.com/markhorn-dev/astro-nano) 主题修改，原项目采用 MIT 许可；本仓库许可见 [LICENSE](LICENSE)。项目中的实验指标需结合对应的数据集、评估方式与结果说明理解。

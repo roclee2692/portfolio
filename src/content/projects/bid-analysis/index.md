@@ -1,7 +1,7 @@
 ---
 title: "Intelligent Bid-Document Analysis System"
 title_zh: "标书智能分析系统"
-description: "University–enterprise project: intelligent parsing and fast screening of bidding documents. Core developer through requirements, architecture and iteration — results filed as an invention patent (published)."
+description: "University–enterprise project: contributed to bid-document analysis, enterprise qualification extraction and iterative matching. A related invention patent application has been published."
 description_zh: "校企合作项目：解析招标要求，抽取企业资质与业绩，并支持多阶段匹配。相关发明专利已公布。"
 date: "2026-04-01"
 featured: true

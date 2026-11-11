@@ -13,7 +13,8 @@ const d = entry.data;
 const title = tf(d, "title", lang);
 const description = tf(d, "description", lang);
 const status = tf(d, "status", lang);
-const { type, id, url, cover } = d;
+const { type, url, cover } = d;
+const id = tf(d, "id", lang);
 const typeLabel = type === "patent" ? t("research.patent") : t("research.paper");
 ---
 

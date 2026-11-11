@@ -1,13 +1,14 @@
 ---
 title: "A Systematic Comparison of Retrieval-Augmentation Methods for Chinese Vertical Domains"
 title_zh: "中文垂直领域检索增强方法的系统对比研究：上下文检索、知识图谱与重排序在水利防洪预案中的实证分析"
-description: "First-author empirical study reproducing Anthropic's Contextual Retrieval and comparing four routes (hybrid baseline, CR, knowledge graph, cross-encoder reranking) on real flood-prevention plans."
+description: "An empirical study reproducing Anthropic's Contextual Retrieval and comparing hybrid retrieval, CR, knowledge graphs and reranking on flood-prevention plans."
 description_zh: "独立完成的实证研究：复现 Anthropic 的 Contextual Retrieval，在真实水利防洪预案上系统对比基线混合检索、上下文增强检索、知识图谱与 Cross-Encoder 重排序四条路线。"
 date: "2026-06-15"
 type: "paper"
 status: "In preparation (unpublished)"
 status_zh: "在写 · 未发表"
 id: "Comparative retrieval experiments · code open-sourced · research in progress"
+id_zh: "检索对照实验 · 代码开源 · 研究进行中"
 url: "https://github.com/roclee2692/contextual-retrieval-by-anthropic"
 ---
 

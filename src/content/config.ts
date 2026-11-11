@@ -58,6 +58,7 @@ const research = defineCollection({
     type: z.enum(["patent", "paper"]),
     status: z.string().optional(),   // 如「实质审查中」「已录用」
     id: z.string().optional(),       // 申请号 / DOI
+    id_zh: z.string().optional(),
     url: z.string().optional(),
     cover: z.string().optional(),
     // 双语：中文覆盖

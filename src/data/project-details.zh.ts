@@ -28,12 +28,12 @@ export const projectDetailsZh: Record<string, Detail> = {
   "mcm-icm-2025": {
     intro: "作为三人团队队长参与 2025 年全国大学生数学建模竞赛 C 题，获得河南赛区一等奖。",
     sections: [
-      { title: "问题与方法", paragraph: "围绕 NIPT 动态决策问题开展数据清理、统计建模、生存分析与风险约束下的决策优化；使用分组交叉验证等方法处理分类问题。" },
+      { title: "问题与方法", paragraph: "组织团队分工，参与数据清洗、编程与分析。团队围绕 NIPT 动态决策问题，结合 GAMM、生存分析、蒙特卡洛动态规划与分类模型完成四个子问题。" },
       { title: "项目材料", paragraph: "仓库提供竞赛论文、模型代码和数据。方法细节及各问的实现可从代码入口查看。" },
     ],
   },
   "ncwu-smartcity": {
-    intro: "在武汉中地数码校企联合实训中与团队开发的智慧城市 GIS 可视化原型，公开仓库为项目展示版。",
+    intro: "在武汉中地数码校企联合实习实训中与团队开发的智慧城市 GIS 可视化原型，公开仓库为项目展示版。",
     sections: [
       { title: "实现内容", points: ["使用 Vue 3、Vite、Leaflet、OpenStreetMap 和 GeoJSON 组织地图与地理数据。", "通过 AntV 和 Three.js 展示城市事件、交通、桥梁、航线与三维场景；展示版使用模拟数据接口。"] },
       { title: "项目经历", paragraph: "实训时间为 2024 年 12 月至 2025 年 1 月，优秀结业。" },

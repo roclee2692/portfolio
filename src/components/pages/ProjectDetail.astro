@@ -47,6 +47,8 @@ const detailsZh = lang === "zh" ? projectDetailsZh[project.slug] : undefined;
             {project.data.demoURL && <Link href={project.data.demoURL} external>{t("detail.demo")}</Link>}
             {project.data.demoURL && project.data.repoURL && <span>/</span>}
             {project.data.repoURL && <Link href={project.data.repoURL} external>{t("detail.repo")}</Link>}
+            {project.slug === "mcm-icm-2025" && <><span>/</span><Link href="https://github.com/roclee2692/MCM-ICM-2025-ProblemC/blob/main/Competition_Paper.pdf" external>{t("proofs.paper")}</Link></>}
+            {project.slug === "mcm-icm-2025" && <><span>/</span><Link href="/proofs/cumcm-2025.jpg" external>{t("proofs.award")}</Link></>}
           </nav>
         )
       )}
@@ -65,6 +67,13 @@ const detailsZh = lang === "zh" ? projectDetailsZh[project.slug] : undefined;
           {project.data.linkType === "private" && <p>代码涉及校企合作，未公开。可在<a href={`${langPrefix(lang)}/research`}>研究页面</a>查看相关专利信息。</p>}
         </>
       ) : <Content />}
+      {project.slug === "ncwu-smartcity" && (
+        <section>
+          <h2>{t("proofs.gis")}</h2>
+          <p>{t("proofs.gis.desc")}</p>
+          <a href="/proofs/gis-training.jpg" target="_blank" rel="noopener noreferrer">{t("proofs.gis.view")} ↗</a>
+        </section>
+      )}
     </article>
   </div>
 </PageLayout>

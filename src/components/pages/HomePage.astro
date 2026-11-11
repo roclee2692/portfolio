@@ -5,6 +5,7 @@ import ProjectCard from "@components/ProjectCard.astro";
 import ResearchCard from "@components/ResearchCard.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 import AwardsList from "@components/AwardsList.astro";
+import Proofs from "@components/Proofs.astro";
 import Link from "@components/Link.astro";
 import { dateRange } from "@lib/utils";
 import { FEATURED_PROJECTS, SITE, SOCIALS } from "@consts";
@@ -159,12 +160,22 @@ const stats = [
     </div>
   </section>
 
+  {/* ══ 工作方式 ══ */}
+  <section class="wrap-tight py-16 sm:py-20">
+    <SectionHeader index="→" subtitle={t("section.approach.kicker")} title={t("section.approach.title")} />
+    <div class="reveal mt-8 max-w-3xl space-y-4 text-base leading-relaxed">
+      <p>{t("section.approach.body")}</p>
+      <p>{t("section.approach.team")}</p>
+    </div>
+  </section>
+
   {/* ══ 竞赛与荣誉 ══ */}
   <section class="wrap py-20 sm:py-28">
     <SectionHeader index="04" subtitle={t("section.awards.kicker")} title={t("section.awards.title")} color="accent2" />
     <div class="mt-10">
       <AwardsList lang={lang} />
     </div>
+    <Proofs lang={lang} />
   </section>
 
   {/* ══ 联系 CTA ══ */}

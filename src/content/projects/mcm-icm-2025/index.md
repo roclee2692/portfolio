@@ -7,8 +7,8 @@ date: "2025-10-01"
 featured: true
 linkType: "repo"
 stack: ["Python", "R", "GAMM", "Survival Analysis", "Monte-Carlo DP"]
-highlight: "Provincial First Prize · team of 3 · Q1–Q4 modelling"
-highlight_zh: "省级一等奖 · 三人团队 · Q1–Q4 全流程建模"
+highlight: "Provincial First Prize · team captain · Q1–Q4 modelling"
+highlight_zh: "河南省一等奖 · 三人团队队长 · Q1–Q4 建模"
 repoURL: "https://github.com/roclee2692/MCM-ICM-2025-ProblemC"
 ---
 

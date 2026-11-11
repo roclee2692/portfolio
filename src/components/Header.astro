@@ -13,6 +13,7 @@ const navigation = [
   { path: "/research", label: t("nav.research") },
   { path: "/projects", label: t("nav.projects") },
   { path: "/work", label: t("nav.work") },
+  { path: "/resume", label: t("nav.resume"), desktopOnly: true },
 ];
 ---
 
@@ -27,7 +28,7 @@ const navigation = [
     <div class="flex items-center gap-2.5 sm:gap-5">
       <nav class="flex items-center gap-2.5 font-mono text-xs sm:gap-5 sm:text-sm" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
         {navigation.map(item => (
-          <a href={`${p}${item.path}`} class="nav-link" aria-current={currentPath.startsWith(item.path) ? "page" : undefined}>{item.label}</a>
+          <a href={`${p}${item.path}`} class:list={["nav-link", item.desktopOnly && "hidden sm:inline-block"]} aria-current={currentPath.startsWith(item.path) ? "page" : undefined}>{item.label}</a>
         ))}
       </nav>
       <LangSwitch />

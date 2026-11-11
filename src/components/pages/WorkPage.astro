@@ -5,7 +5,7 @@ import SectionHeader from "@components/SectionHeader.astro";
 import AwardsList from "@components/AwardsList.astro";
 import Proofs from "@components/Proofs.astro";
 import { dateRange } from "@lib/utils";
-import { useTranslations, tf, type Lang } from "@i18n/ui";
+import { useTranslations, tf, langPrefix, type Lang } from "@i18n/ui";
 
 type Props = { lang: Lang };
 const { lang } = Astro.props;
@@ -30,6 +30,7 @@ const work = await Promise.all(
         <p class="eyebrow"><span class="eyebrow-dot"></span>{t("about.kicker")}</p>
         <h1 class="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight text-black dark:text-white sm:text-5xl">{t("about.title")}</h1>
         <p class="mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">{t("about.intro")}</p>
+        <a href={`${langPrefix(lang)}/resume`} class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline">{t("resume.view")} <span aria-hidden="true">↗</span></a>
       </div>
       <div class="about-values">
         <span class="font-mono text-xs uppercase tracking-[0.18em] text-accent">{t("about.values")}</span>

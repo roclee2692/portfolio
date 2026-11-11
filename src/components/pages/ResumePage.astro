@@ -1,0 +1,27 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { useTranslations, type Lang } from "@i18n/ui";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const resumeUrl = "/files/li-peng-resume.pdf";
+---
+
+<PageLayout title={t("resume.title")} description={t("resume.description")} lang={lang}>
+  <div class="wrap-tight">
+    <div class="reveal max-w-3xl">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>PDF / RESUME</p>
+      <h1 class="mt-4 font-display text-4xl font-semibold tracking-tight text-black dark:text-white sm:text-5xl">{t("resume.title")}</h1>
+      <p class="mt-4 text-base leading-relaxed">{t("resume.description")}</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href={resumeUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 dark:text-ink">{t("resume.open")} <span aria-hidden="true">↗</span></a>
+        <a href={resumeUrl} download="李鹏_简历.pdf" class="inline-flex items-center gap-2 rounded-full border border-[rgb(var(--line)/0.2)] px-5 py-2.5 text-sm font-medium text-black transition-colors hover:border-accent hover:text-accent dark:text-white">{t("resume.download")} <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <div class="reveal mt-8 overflow-hidden rounded-2xl border border-[rgb(var(--line)/0.1)] bg-white shadow-xl shadow-black/5">
+      <iframe src={`${resumeUrl}#view=FitH`} title={t("resume.preview")} loading="lazy" class="block h-[70vh] min-h-[32rem] w-full border-0 bg-white sm:h-[65rem]"></iframe>
+    </div>
+    <p class="mt-4 text-sm leading-relaxed">{t("resume.fallback")}</p>
+  </div>
+</PageLayout>

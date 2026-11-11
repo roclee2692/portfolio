@@ -70,6 +70,9 @@ const work = await Promise.all(
           <a href="#contact" class="inline-flex items-center gap-2 rounded-full border border-[rgb(var(--line)/0.2)] px-5 py-2.5 text-sm font-medium text-black transition-colors hover:border-accent hover:text-accent dark:text-white">
             {t("hero.contact")}
           </a>
+          <a href={`${lp}/resume`} class="inline-flex items-center gap-2 rounded-full border border-[rgb(var(--line)/0.2)] px-5 py-2.5 text-sm font-medium text-black transition-colors hover:border-accent hover:text-accent dark:text-white">
+            {t("resume.view")} <span aria-hidden="true">↗</span>
+          </a>
           <div class="ml-1 flex items-center gap-3 font-mono text-sm">
             {SOCIALS.map(s => (
               <Link href={s.HREF} external aria-label={`${name} on ${s.NAME}`}>{s.NAME}</Link>

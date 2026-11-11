@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+ <defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#191c38"/><stop offset="1" stop-color="#080e1a"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#a78bfa" stop-opacity=".36"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#dce3ff" stroke-opacity=".045"/></pattern>
+ </defs>
+ <rect width="1200" height="630" fill="url(#bg)"/><rect width="1200" height="630" fill="url(#grid)"/><circle cx="910" cy="310" r="390" fill="url(#glow)"/>
+ <text x="92" y="120" fill="#9ee7dc" font-family="Arial,sans-serif" font-size="21" letter-spacing="4">RESEARCH / ENGINEERING</text>
+ <text x="86" y="265" fill="#f6f5ff" font-family="Arial,sans-serif" font-weight="700" font-size="92" letter-spacing="-3">LI PENG<tspan fill="#b8a7ff">.</tspan></text>
+ <text x="92" y="329" fill="#e6e4f6" font-family="Arial,sans-serif" font-size="27">AI applications · RAG · model evaluation</text>
+ <path d="M92 393h490" stroke="#f3f2ff" stroke-opacity=".2"/>
+ <text x="92" y="455" fill="#b7bad2" font-family="Arial,sans-serif" font-size="18" letter-spacing="2">PORTFOLIO / SELECTED WORK</text>
+ <circle cx="900" cy="305" r="195" fill="none" stroke="#dfe3ff" stroke-opacity=".16"/>
+ <circle cx="900" cy="305" r="140" fill="none" stroke="#dfe3ff" stroke-opacity=".25" stroke-dasharray="4 10"/>
+ <circle cx="900" cy="305" r="76" fill="#a78bfa" fill-opacity=".12" stroke="#c9bbff" stroke-opacity=".6"/>
+ <path d="M875 305h50m-25-25v50" stroke="#ece8ff" stroke-width="3" stroke-linecap="round"/>
+ <path d="M730 410 C790 298 836 219 900 305 S1020 361 1080 205" fill="none" stroke="#9de3da" stroke-opacity=".7" stroke-width="3"/>
+ <circle cx="730" cy="410" r="8" fill="#93dfd4"/><circle cx="1080" cy="205" r="8" fill="#b9a8ff"/>
+ <text x="1106" y="550" text-anchor="end" fill="#aab1cc" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">PORTFOLIO-6MR.PAGES.DEV</text>
+</svg>

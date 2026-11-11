@@ -5,6 +5,7 @@ description: "Reproduced Anthropic's Contextual Retrieval, then ran systematic c
 description_zh: "复现 Anthropic 的 Contextual Retrieval，并在多领域数据集上做系统对照实验——发现其「双刃剑」效应，以及现有条件下知识图谱的瓶颈。"
 date: "2026-06-01"
 featured: true
+cover: "/covers/context-retrieval.svg"
 linkType: "repo"
 stack: ["Python", "RAG", "Contextual Embeddings", "BM25", "Knowledge Graph"]
 highlight: "3 phases · 6 controlled comparisons"

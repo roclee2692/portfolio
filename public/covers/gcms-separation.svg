@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="SIGNALS &amp; LEARNING illustration">
+ <defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a1c37"/><stop offset="1" stop-color="#080e1b"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#c5a4ff" stop-opacity=".3"/><stop offset="1" stop-color="#c5a4ff" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 H 0 V 40" fill="none" stroke="#dce3ff" stroke-opacity=".045"/></pattern>
+ </defs>
+ <rect width="800" height="480" fill="url(#bg)"/><rect width="800" height="480" fill="url(#grid)"/>
+ <circle cx="410" cy="215" r="250" fill="url(#glow)"/>
+ <path d="M42 80h716M42 402h716" stroke="#eef2ff" stroke-opacity=".11"/>
+ <text x="46" y="53" fill="#e9e9ff" fill-opacity=".65" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">SELECTED WORK / 03</text>
+ <circle cx="745" cy="47" r="4" fill="#c5a4ff"/><circle cx="727" cy="47" r="4" fill="#fff" fill-opacity=".2"/>
+
+ <rect x="95" y="108" width="610" height="250" rx="16" fill="#101a2e" fill-opacity=".78" stroke="#b6b9df" stroke-opacity=".22"/>
+ <path d="M120 160h560M120 215h560M120 270h560M120 325h560M220 130v205M320 130v205M420 130v205M520 130v205M620 130v205" stroke="#dce4ff" stroke-opacity=".11"/>
+ <path d="M120 315 C149 316 160 312 171 300 C180 290 181 234 192 223 C203 234 205 297 215 302 C239 314 249 301 261 282 C273 256 277 165 290 155 C306 171 309 285 327 297 C352 313 362 309 375 290 C387 270 388 222 398 220 C409 221 414 294 428 300 C450 308 461 303 472 285 C482 265 487 197 498 194 C510 195 515 293 533 300 C562 310 570 296 580 283 C591 263 592 244 601 241 C611 240 616 300 632 308 L680 315" fill="none" stroke="#b9a5ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M120 324 C175 324 180 318 190 292 C200 268 202 241 210 240 C220 241 227 312 246 316 C269 320 281 294 290 253 C299 211 303 194 309 194 C321 196 321 300 344 314 C367 321 384 299 396 276 C408 251 411 246 418 246 C428 247 434 306 455 315 C476 318 489 307 500 284 C511 260 516 241 525 242 C536 242 541 308 563 315 C590 320 608 306 621 294 C636 281 647 318 680 324" fill="none" stroke="#75d7ca" stroke-opacity=".8" stroke-width="2.5" stroke-linecap="round"/>
+ <circle cx="290" cy="155" r="6" fill="#d8ccff"/><circle cx="498" cy="194" r="6" fill="#d8ccff"/>
+
+ <text x="47" y="446" fill="#eef1ff" fill-opacity=".88" font-family="Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="2.5">SIGNALS &amp; LEARNING</text>
+ <text x="753" y="445" text-anchor="end" fill="#c5a4ff" font-family="Arial,sans-serif" font-size="15">↗</text>
+ </svg>

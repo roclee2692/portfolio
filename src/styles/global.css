@@ -12,7 +12,7 @@ html {
   --bg: 248 249 251;        /* 冷白 */
   --surface: 255 255 255;   /* 卡片面 */
   --accent: 109 40 217;     /* 主 · violet-700 */
-  --accent2: 13 148 136;    /* 次 · teal-600（Research 区） */
+  --accent2: 15 118 110;    /* 次 · teal-700（浅色底文字更清晰） */
   --line: 15 23 42;         /* 边线/文字基准（用 alpha） */
 }
 
@@ -41,6 +41,12 @@ html.dark body {
 
 ::selection {
   background: rgb(var(--accent) / 0.25);
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 /* ── 背景氛围（全站，fixed） ───────────────── */
@@ -76,6 +82,9 @@ html.scrolled header {
   backdrop-filter: blur(14px) saturate(1.4);
   border-bottom-color: rgb(var(--line) / 0.08);
 }
+.nav-link { position: relative; display: inline-block; transition: color .2s; }
+.nav-link:hover, .nav-link[aria-current="page"] { color: rgb(var(--line)); }
+.nav-link[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -.45rem; height: 2px; border-radius: 2px; background: rgb(var(--accent)); }
 
 main { @apply flex-1; }
 footer { @apply py-8 text-sm; }
@@ -128,6 +137,74 @@ html.dark .card { background: rgb(var(--surface) / 0.5); border-color: rgb(var(-
   box-shadow: 0 18px 50px -18px rgb(var(--accent2) / 0.4);
 }
 
+/* 封面插画、首页首屏和个人介绍：统一的视觉系统。 */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 80% 45%, rgb(var(--accent) / .08), transparent 48%);
+}
+.hero-name { font-size: clamp(5rem, 10vw, 8.5rem); letter-spacing: -.055em; }
+.hero-name-en { font-size: clamp(3.4rem, 6vw, 6.1rem); line-height: 1.04; }
+.hero-visual-wrap { position: relative; width: 100%; max-width: 38rem; justify-self: end; }
+.hero-visual-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 3% -3% 8%;
+  z-index: -1;
+  background: radial-gradient(ellipse, rgb(var(--accent) / .24), transparent 72%);
+  filter: blur(35px);
+}
+.hero-visual {
+  overflow: hidden;
+  border: 1px solid rgb(220 223 255 / .15);
+  border-radius: 1.75rem;
+  background: radial-gradient(ellipse at 50% 46%, #252348 0, #151c35 46%, #0d1427 100%);
+  box-shadow: 0 30px 80px -38px rgb(28 22 83 / .55), inset 0 1px 0 rgb(255 255 255 / .1);
+}
+.hero-visual-top, .hero-visual-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 1.5rem;
+  font-family: "JetBrains Mono", monospace;
+}
+.hero-visual-top { padding: 1.3rem 0 1rem; color: rgb(231 234 255 / .54); font-size: .62rem; letter-spacing: .12em; }
+.hero-visual-live { color: #9ce8dc; letter-spacing: 0; white-space: nowrap; }
+.hero-visual-live span { display: inline-block; width: .4rem; height: .4rem; border-radius: 50%; background: #94e6d6; vertical-align: middle; }
+.hero-diagram { display: block; width: 100%; height: auto; margin: -1rem 0 -1.25rem; }
+.hero-orbit { transform-box: view-box; transform-origin: 50% 48.3%; animation: orbit 25s linear infinite; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+.hero-visual-bottom { padding: 1.2rem 0 1.5rem; border-top: 1px solid rgb(220 223 255 / .12); }
+.hero-visual-bottom p { color: rgb(224 227 255 / .48); font-size: .62rem; letter-spacing: .14em; }
+.hero-visual-bottom strong { display: block; margin-top: .45rem; color: #f0f1ff; font-family: Inter, sans-serif; font-size: 1rem; font-weight: 600; }
+.hero-visual-bottom > span { color: #9ce8dc; font-size: 1.35rem; }
+.hero-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1.3rem; }
+.hero-metrics > div { padding: .1rem .9rem; border-left: 1px solid rgb(var(--line) / .12); }
+.hero-metrics > div:first-child { padding-left: 0; border-left: 0; }
+.hero-metrics strong { display: block; color: rgb(var(--line)); font-family: "Space Grotesk", sans-serif; font-size: 1.35rem; line-height: 1.1; }
+.hero-metrics span { display: block; margin-top: .4rem; color: rgb(var(--line) / .57); font-size: .7rem; line-height: 1.4; }
+.project-card { border-radius: 1.4rem; }
+.project-card:hover { box-shadow: 0 24px 55px -28px rgb(var(--accent) / .38); }
+.project-cover { background: #10162b; }
+.project-cover::after { content: ""; position: absolute; inset: auto 0 0; height: 1px; background: rgb(255 255 255 / .14); pointer-events: none; }
+.about-hero {
+  display: grid;
+  gap: 2rem;
+  padding: clamp(1.6rem, 4vw, 3.3rem);
+  border: 1px solid rgb(var(--line) / .1);
+  border-radius: 1.75rem;
+  background: linear-gradient(145deg, rgb(var(--surface) / .9), rgb(var(--accent) / .045));
+  box-shadow: 0 30px 80px -55px rgb(var(--accent) / .35);
+}
+.eyebrow { display: flex; align-items: center; gap: .65rem; color: rgb(var(--accent)); font-family: "JetBrains Mono", monospace; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; }
+.eyebrow-dot { width: .42rem; height: .42rem; border-radius: 50%; background: rgb(var(--accent2)); }
+.about-values { padding: 1.4rem; border: 1px solid rgb(var(--accent) / .16); border-radius: 1.2rem; background: rgb(var(--surface) / .65); }
+@media (min-width: 1024px) { .about-hero { grid-template-columns: 1.2fr .8fr; align-items: center; } }
+@media (max-width: 639px) { .hero-visual-top, .hero-visual-bottom { margin-inline: 1.1rem; } .hero-name { font-size: clamp(4.6rem, 20vw, 6.4rem); } .hero-name-en { font-size: clamp(3rem, 12vw, 4.5rem); } }
+
 /* 状态呼吸点 */
 .status-dot { @apply relative flex h-2 w-2; }
 .status-dot span:first-child {
@@ -164,18 +241,21 @@ html.dark .card { background: rgb(var(--surface) / 0.5); border-color: rgb(var(-
 }
 
 /* ── 滚动进入动效 ───────────────────────────── */
-.reveal { opacity: 0; transform: translateY(28px); }
-.reveal.in {
+.reveal { opacity: 1; transform: none; }
+html.js-enabled .reveal { opacity: 0; transform: translateY(28px); }
+html.js-enabled .reveal.in {
   opacity: 1; transform: none;
   transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1);
 }
 /* 旧的 .animate 兼容（blog/详情页仍用） */
 .animate { @apply opacity-0 translate-y-3 transition-all duration-700 ease-out; }
 .animate.show { @apply opacity-100 translate-y-0; }
+html:not(.js-enabled) .animate { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1 !important; transform: none !important; }
-  .orb, .text-gradient-shimmer, .status-dot span:first-child, .animate-bob { animation: none !important; }
+  .reveal, .animate { opacity: 1 !important; transform: none !important; }
+  .orb, .text-gradient-shimmer, .status-dot span:first-child, .animate-bob, .hero-orbit { animation: none !important; }
+  .card, .card:hover { transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }
 

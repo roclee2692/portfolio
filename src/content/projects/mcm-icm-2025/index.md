@@ -5,6 +5,7 @@ description: "Provincial First Prize solution to CUMCM 2025 Problem C: NIPT dyna
 description_zh: "全国大学生数学建模竞赛 2025 C 题（省级一等奖）：NIPT 动态决策优化，结合生存分析与风险约束的蒙特卡洛动态规划。"
 date: "2025-10-01"
 featured: true
+cover: "/covers/mcm-icm-2025.svg"
 linkType: "repo"
 stack: ["Python", "R", "GAMM", "Survival Analysis", "Monte-Carlo DP"]
 highlight: "Provincial First Prize · team captain · Q1–Q4 modelling"

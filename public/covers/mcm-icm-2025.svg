@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="MODEL · ANALYZE · DECIDE illustration">
+ <defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a1c37"/><stop offset="1" stop-color="#080e1b"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#a8d8ff" stop-opacity=".3"/><stop offset="1" stop-color="#a8d8ff" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 H 0 V 40" fill="none" stroke="#dce3ff" stroke-opacity=".045"/></pattern>
+ </defs>
+ <rect width="800" height="480" fill="url(#bg)"/><rect width="800" height="480" fill="url(#grid)"/>
+ <circle cx="410" cy="215" r="250" fill="url(#glow)"/>
+ <path d="M42 80h716M42 402h716" stroke="#eef2ff" stroke-opacity=".11"/>
+ <text x="46" y="53" fill="#e9e9ff" fill-opacity=".65" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">SELECTED WORK / 04</text>
+ <circle cx="745" cy="47" r="4" fill="#a8d8ff"/><circle cx="727" cy="47" r="4" fill="#fff" fill-opacity=".2"/>
+
+ <rect x="111" y="106" width="578" height="260" rx="17" fill="#111b30" fill-opacity=".82" stroke="#adc4e3" stroke-opacity=".25"/>
+ <path d="M157 319h480M157 133v186" stroke="#dbe7ff" stroke-opacity=".4" stroke-width="1.5"/>
+ <path d="M157 273h480M157 226h480M157 179h480" stroke="#dbe7ff" stroke-opacity=".1"/>
+ <path d="M173 292 C235 272 253 255 303 256 C355 256 383 222 423 205 C466 187 494 202 535 167 C572 137 597 151 636 137" fill="none" stroke="#9fd5ff" stroke-width="4"/>
+ <g fill="#9fd5ff"><circle cx="190" cy="288" r="5"/><circle cx="236" cy="271" r="5"/><circle cx="288" cy="259" r="5"/><circle cx="342" cy="246" r="5"/><circle cx="390" cy="220" r="5"/><circle cx="451" cy="199" r="5"/><circle cx="506" cy="189" r="5"/><circle cx="554" cy="166" r="5"/><circle cx="610" cy="148" r="5"/></g>
+ <rect x="523" y="283" width="118" height="45" rx="10" fill="#a8d8ff" fill-opacity=".12" stroke="#a8d8ff" stroke-opacity=".35"/><text x="582" y="310" text-anchor="middle" fill="#d7edff" font-family="Arial,sans-serif" font-size="13" letter-spacing="1">CUMCM 2025</text>
+
+ <text x="47" y="446" fill="#eef1ff" fill-opacity=".88" font-family="Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="2.5">MODEL · ANALYZE · DECIDE</text>
+ <text x="753" y="445" text-anchor="end" fill="#a8d8ff" font-family="Arial,sans-serif" font-size="15">↗</text>
+ </svg>

@@ -5,6 +5,7 @@ description: "End-to-end 1D-CNN for GC-MS: identify components of essential-oil 
 description_zh: "端到端 1D-CNN：直接从一维色谱信号（RT-TIC）识别精油混合物成分并预测配比。企业合作探索项目。"
 date: "2026-05-03"
 featured: true
+cover: "/covers/gcms-separation.svg"
 linkType: "repo"
 stack: ["Python", "1D-CNN", "PyTorch", "GC-MS", "Synthetic Data"]
 highlight: "87 monomers · 74,820 synthetic samples · real-mixture validation"

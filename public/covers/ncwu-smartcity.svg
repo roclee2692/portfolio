@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="CITY IN LAYERS illustration">
+ <defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a1c37"/><stop offset="1" stop-color="#080e1b"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#89e1cc" stop-opacity=".3"/><stop offset="1" stop-color="#89e1cc" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 H 0 V 40" fill="none" stroke="#dce3ff" stroke-opacity=".045"/></pattern>
+ </defs>
+ <rect width="800" height="480" fill="url(#bg)"/><rect width="800" height="480" fill="url(#grid)"/>
+ <circle cx="410" cy="215" r="250" fill="url(#glow)"/>
+ <path d="M42 80h716M42 402h716" stroke="#eef2ff" stroke-opacity=".11"/>
+ <text x="46" y="53" fill="#e9e9ff" fill-opacity=".65" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">SELECTED WORK / 05</text>
+ <circle cx="745" cy="47" r="4" fill="#89e1cc"/><circle cx="727" cy="47" r="4" fill="#fff" fill-opacity=".2"/>
+
+ <g transform="translate(147 104)">
+  <rect x="0" y="0" width="506" height="266" rx="17" fill="#112633" stroke="#a4e4d8" stroke-opacity=".35"/>
+  <path d="M0 64h506M0 145h506M0 215h506M103 0v266M204 0v266M316 0v266M406 0v266" stroke="#a9d9d4" stroke-opacity=".16"/>
+  <path d="M-1 189 C74 162 96 121 165 129 S271 197 343 154 S430 70 507 84" fill="none" stroke="#65aeb2" stroke-opacity=".5" stroke-width="22"/>
+  <path d="M-1 189 C74 162 96 121 165 129 S271 197 343 154 S430 70 507 84" fill="none" stroke="#9eeadd" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M74 265 225 0M211 265 374 0M339 266 505 30M0 46 506 199" stroke="#e3f5f2" stroke-opacity=".25" stroke-width="5"/>
+  <g fill="#89e1cc" stroke="#142a36" stroke-width="5"><circle cx="174" cy="129" r="10"/><circle cx="338" cy="154" r="10"/><circle cx="425" cy="93" r="10"/></g>
+  <rect x="23" y="20" width="114" height="34" rx="9" fill="#0e1d2c" fill-opacity=".8"/><text x="38" y="42" fill="#b6efe5" font-family="Arial,sans-serif" font-size="12" letter-spacing="1">GEOSPATIAL</text>
+ </g>
+
+ <text x="47" y="446" fill="#eef1ff" fill-opacity=".88" font-family="Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="2.5">CITY IN LAYERS</text>
+ <text x="753" y="445" text-anchor="end" fill="#89e1cc" font-family="Arial,sans-serif" font-size="15">↗</text>
+ </svg>

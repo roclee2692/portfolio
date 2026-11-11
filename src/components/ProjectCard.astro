@@ -19,16 +19,18 @@ const featured = FEATURED_PROJECTS.includes(entry.slug);
 const href = `${langPrefix(lang)}/projects/${entry.slug}`;
 ---
 
-<div class="card group flex h-full flex-col overflow-hidden">
-  <a href={href} class="relative block overflow-hidden">
+<div class="project-card card group flex h-full flex-col overflow-hidden">
+  <a href={href} class="project-cover relative block overflow-hidden" aria-label={`${title} · ${t("card.details")}`}>
     {cover ? (
       <img
         src={cover}
-        alt={title}
-        class="h-40 w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        class="aspect-[5/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
       />
     ) : (
-      <div class="relative flex h-36 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-accent/20 via-accent/5 to-transparent">
+      <div class="relative flex aspect-[5/3] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-accent/20 via-accent/5 to-transparent">
         <div
           class="absolute inset-0 opacity-40"
           style="background-image: radial-gradient(circle, rgb(var(--accent) / 0.25) 1px, transparent 1px); background-size: 16px 16px;"
@@ -40,13 +42,13 @@ const href = `${langPrefix(lang)}/projects/${entry.slug}`;
       </div>
     )}
     {featured && (
-      <span class="absolute right-2 top-2 badge bg-accent text-white dark:text-ink">
-        ★ {t("card.featured")}
+      <span class="absolute right-4 top-4 rounded-full border border-white/20 bg-black/25 px-3 py-1 font-mono text-[10px] tracking-wider text-white backdrop-blur-sm">
+        {t("card.featured")}
       </span>
     )}
   </a>
 
-  <div class="flex flex-1 flex-col gap-3 p-4">
+  <div class="flex flex-1 flex-col gap-3 p-5 sm:p-6">
     <a href={href} class="block">
       <h3 class="font-display text-lg font-semibold text-black dark:text-white transition-colors group-hover:text-accent">
         {title}

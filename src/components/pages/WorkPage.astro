@@ -25,21 +25,46 @@ const work = await Promise.all(
 
 <PageLayout title={t("meta.work.title")} description={t("meta.work.desc")} lang={lang}>
   <div class="wrap-tight">
-    <SectionHeader index="▹" subtitle={t("section.experience.kicker")} title={t("section.experience.title")} />
-    <ol class="mt-10 space-y-8">
+    <section class="about-hero reveal">
+      <div class="about-hero-main">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>{t("about.kicker")}</p>
+        <h1 class="mt-5 font-display text-4xl font-semibold leading-tight tracking-tight text-black dark:text-white sm:text-5xl">{t("about.title")}</h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed sm:text-lg">{t("about.intro")}</p>
+      </div>
+      <div class="about-values">
+        <span class="font-mono text-xs uppercase tracking-[0.18em] text-accent">{t("about.values")}</span>
+        <p class="mt-4 text-sm leading-relaxed sm:text-base">{t("section.approach.body")}</p>
+        <div class="mt-6 flex flex-wrap gap-2" aria-label={lang === "zh" ? "关注方向" : "Focus areas"}>
+          <span class="pill">RAG</span><span class="pill">LLM EVAL</span><span class="pill">PYTHON</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="mt-20 scroll-mt-28 sm:mt-24">
+      <SectionHeader index="01" subtitle={t("section.experience.kicker")} title={t("section.experience.title")} />
+      <ol class="mt-10 space-y-8">
       {work.map((entry, i) => (
         <li class="reveal relative border-l-2 border-[rgb(var(--line)/0.12)] pl-6" style={`transition-delay:${i * 80}ms`}>
           <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-ink"></span>
-          <div class="font-mono text-xs text-accent">{dateRange(entry.data.dateStart, entry.data.dateEnd)}</div>
+          <div class="font-mono text-xs text-accent">{tf(entry.data, "dateLabel", lang) || dateRange(entry.data.dateStart, entry.data.dateEnd, lang)}</div>
           <div class="mt-1 font-display text-lg font-semibold text-black dark:text-white">{tf(entry.data, "company", lang)}</div>
           <div class="text-sm opacity-70">{tf(entry.data, "role", lang)}</div>
           <article class="mt-2 text-sm">{lang === "zh" && entry.data.description_zh ? <p>{entry.data.description_zh}</p> : <entry.Content />}</article>
         </li>
       ))}
-    </ol>
+        <li class="reveal relative border-l-2 border-[rgb(var(--line)/0.12)] pl-6">
+          <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-ink"></span>
+          <div class="font-mono text-xs text-accent">{t("campus.date")}</div>
+          <div class="mt-1 font-display text-lg font-semibold text-black dark:text-white">{t("campus.media.title")}</div>
+          <p class="mt-2 text-sm leading-relaxed">{t("campus.media.body")}</p>
+          <div class="mt-5 font-display text-lg font-semibold text-black dark:text-white">{t("campus.club.title")}</div>
+          <p class="mt-2 text-sm leading-relaxed">{t("campus.club.body")}</p>
+        </li>
+      </ol>
+    </section>
 
-    <div class="mt-16">
-      <SectionHeader index="◆" subtitle={t("section.awards.kicker")} title={t("section.awards.title")} color="accent2" />
+    <div class="mt-20">
+      <SectionHeader index="02" subtitle={t("section.awards.kicker")} title={t("section.awards.title")} color="accent2" />
       <div class="mt-8">
         <AwardsList lang={lang} />
       </div>

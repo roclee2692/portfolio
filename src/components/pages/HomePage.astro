@@ -6,6 +6,7 @@ import ResearchCard from "@components/ResearchCard.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 import AwardsList from "@components/AwardsList.astro";
 import Proofs from "@components/Proofs.astro";
+import HeroVisual from "@components/HeroVisual.astro";
 import Link from "@components/Link.astro";
 import { dateRange } from "@lib/utils";
 import { FEATURED_PROJECTS, SITE, SOCIALS } from "@consts";
@@ -34,30 +35,26 @@ const work = await Promise.all(
   })
 );
 
-const stats = [
-  { k: "projects", v: String(allProjects.length).padStart(2, "0") },
-  { k: "patents", v: String(patentCount).padStart(2, "0") },
-  { k: "stack", v: "Python · PyTorch · RAG" },
-  { k: "location", v: t("stats.location") },
-];
 ---
 
 <PageLayout title={t("meta.home.title")} description={t("meta.home.desc")} bleed lang={lang}>
   {/* ══ 封面 Hero ══ */}
-  <section class="relative flex min-h-[100svh] items-center overflow-hidden">
-    <div class="wrap grid w-full items-center gap-10 pt-28 pb-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+  <section class="hero-section relative flex min-h-[100svh] items-center overflow-hidden">
+    <div class="wrap grid w-full items-center gap-14 pt-32 pb-24 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:pt-36 lg:pb-32">
       <div>
-        <div class="reveal inline-flex items-center gap-2 rounded-full border border-accent2/30 bg-accent2/5 px-3 py-1 font-mono text-xs text-accent2">
+        <div class="reveal inline-flex items-center gap-2 rounded-full border border-accent2/30 bg-accent2/5 px-3 py-1.5 font-mono text-xs text-accent2">
           <span class="status-dot"><span></span><span></span></span>
           {t("hero.badge")}
         </div>
 
-        <h1 class="reveal mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight text-black dark:text-white sm:text-6xl lg:text-7xl" style="transition-delay:.08s">
-          {t("hero.greeting")}
-          <span class="mt-1 block text-gradient-shimmer">{name}</span>
+        <h1 class="reveal mt-9 font-display font-semibold leading-[1.02] tracking-tight text-black dark:text-white" style="transition-delay:.08s">
+          <span class="block text-lg font-medium tracking-normal text-black/55 dark:text-white/55 sm:text-xl">{t("hero.greeting")}</span>
+          <span class:list={["hero-name mt-3 block", lang === "en" && "hero-name-en"]}>{name}<span class="text-accent" aria-hidden="true">.</span></span>
         </h1>
 
-        <p class="reveal mt-4 font-mono text-sm text-accent sm:text-base" style="transition-delay:.16s">
+        <p class="reveal mt-5 font-display text-xl font-medium tracking-tight text-black/85 dark:text-white/85 sm:text-2xl" style="transition-delay:.12s">{t("hero.statement")}</p>
+
+        <p class="reveal mt-5 font-mono text-xs uppercase tracking-wide text-accent sm:text-sm" style="transition-delay:.16s">
           {t("hero.role")}
         </p>
 
@@ -65,8 +62,8 @@ const stats = [
           {t("hero.tagline")}
         </p>
 
-        <div class="reveal mt-8 flex flex-wrap items-center gap-3" style="transition-delay:.32s">
-          <a href="#projects" class="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-accent/25 transition-transform hover:-translate-y-0.5 dark:text-ink">
+        <div class="reveal mt-9 flex flex-wrap items-center gap-3" style="transition-delay:.32s">
+          <a href="#projects" class="group inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white shadow-lg shadow-accent/25 transition-transform hover:-translate-y-0.5 dark:text-ink">
             {t("hero.viewProjects")}
             <span class="transition-transform group-hover:translate-x-0.5">→</span>
           </a>
@@ -81,34 +78,10 @@ const stats = [
         </div>
       </div>
 
-      <div class="reveal relative" style="transition-delay:.4s">
-        <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-accent/20 via-transparent to-accent2/20 blur-2xl"></div>
-        <div class="card p-5 sm:p-6">
-          <div class="flex items-center gap-2 border-b border-[rgb(var(--line)/0.1)] pb-3">
-            <span class="h-3 w-3 rounded-full bg-red-400/80"></span>
-            <span class="h-3 w-3 rounded-full bg-amber-400/80"></span>
-            <span class="h-3 w-3 rounded-full bg-emerald-400/80"></span>
-            <span class="ml-2 font-mono text-xs text-black/50 dark:text-white/50">~/portfolio.json</span>
-          </div>
-          <dl class="mt-4 space-y-3 font-mono text-sm">
-            {stats.map(s => (
-              <div class="flex items-center justify-between gap-4">
-                <dt class="text-black/45 dark:text-white/45">{s.k}</dt>
-                <dd class="truncate text-right text-black dark:text-white">{s.v}</dd>
-              </div>
-            ))}
-            <div class="flex items-center justify-between gap-4 pt-1">
-              <dt class="text-black/45 dark:text-white/45">status</dt>
-              <dd class="flex items-center gap-1.5 text-accent2">
-                <span class="status-dot"><span></span><span></span></span>{t("stats.status")}
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
+      <HeroVisual lang={lang} projectCount={allProjects.length} patentCount={patentCount} />
     </div>
 
-    <a href="#projects" class="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 font-mono text-[10px] uppercase tracking-widest text-black/40 hover:text-accent dark:text-white/40">
+    <a href="#projects" class="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 font-mono text-[10px] uppercase tracking-widest text-black/40 hover:text-accent dark:text-white/40 lg:flex">
       {t("hero.scroll")}
       <span class="animate-bob">↓</span>
     </a>
@@ -150,7 +123,7 @@ const stats = [
         {work.map((entry, i) => (
           <li class="reveal relative md:pt-8" style={`transition-delay:${i * 90}ms`}>
             <span class="absolute left-0 top-0 hidden h-3 w-3 rounded-full border-2 border-accent bg-ink md:block"></span>
-            <div class="font-mono text-xs text-accent">{dateRange(entry.data.dateStart, entry.data.dateEnd)}</div>
+            <div class="font-mono text-xs text-accent">{tf(entry.data, "dateLabel", lang) || dateRange(entry.data.dateStart, entry.data.dateEnd, lang)}</div>
             <div class="mt-1 font-display text-lg font-semibold text-black dark:text-white">{tf(entry.data, "company", lang)}</div>
             <div class="text-sm opacity-70">{tf(entry.data, "role", lang)}</div>
             <article class="mt-2 text-sm">{lang === "zh" && entry.data.description_zh ? <p>{entry.data.description_zh}</p> : <entry.Content />}</article>

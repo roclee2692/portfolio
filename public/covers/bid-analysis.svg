@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="DOCUMENT INTELLIGENCE illustration">
+ <defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a1c37"/><stop offset="1" stop-color="#080e1b"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#b5a3ff" stop-opacity=".3"/><stop offset="1" stop-color="#b5a3ff" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 H 0 V 40" fill="none" stroke="#dce3ff" stroke-opacity=".045"/></pattern>
+ </defs>
+ <rect width="800" height="480" fill="url(#bg)"/><rect width="800" height="480" fill="url(#grid)"/>
+ <circle cx="410" cy="215" r="250" fill="url(#glow)"/>
+ <path d="M42 80h716M42 402h716" stroke="#eef2ff" stroke-opacity=".11"/>
+ <text x="46" y="53" fill="#e9e9ff" fill-opacity=".65" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">SELECTED WORK / 01</text>
+ <circle cx="745" cy="47" r="4" fill="#b5a3ff"/><circle cx="727" cy="47" r="4" fill="#fff" fill-opacity=".2"/>
+
+ <rect x="271" y="109" width="235" height="233" rx="17" fill="#111b32" stroke="#9a93cf" stroke-opacity=".55"/>
+ <rect x="295" y="92" width="235" height="233" rx="17" fill="#1b2440" stroke="#d5cfff" stroke-opacity=".38"/>
+ <rect x="325" y="126" width="115" height="9" rx="4.5" fill="#eeeaff" fill-opacity=".85"/>
+ <rect x="325" y="155" width="173" height="6" rx="3" fill="#eeeaff" fill-opacity=".26"/><rect x="325" y="174" width="145" height="6" rx="3" fill="#eeeaff" fill-opacity=".18"/>
+ <rect x="323" y="207" width="179" height="61" rx="10" fill="#b5a3ff" fill-opacity=".13" stroke="#b5a3ff" stroke-opacity=".58"/>
+ <circle cx="346" cy="237" r="7" fill="#b5a3ff"/><path d="M364 230h102m-102 14h75" stroke="#eeeaff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+ <path d="M135 226h122M542 226h119" stroke="#b5a3ff" stroke-opacity=".65" stroke-width="2" stroke-dasharray="5 7"/>
+ <circle cx="130" cy="226" r="22" fill="#b5a3ff" fill-opacity=".14" stroke="#b5a3ff" stroke-opacity=".6"/><path d="M120 226h20m-10-10v20" stroke="#ddd4ff" stroke-width="2"/>
+ <circle cx="668" cy="226" r="22" fill="#9fe7da" fill-opacity=".14" stroke="#9fe7da" stroke-opacity=".65"/><path d="m657 225 8 8 14-16" fill="none" stroke="#9fe7da" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+ <text x="47" y="446" fill="#eef1ff" fill-opacity=".88" font-family="Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="2.5">DOCUMENT INTELLIGENCE</text>
+ <text x="753" y="445" text-anchor="end" fill="#b5a3ff" font-family="Arial,sans-serif" font-size="15">↗</text>
+ </svg>

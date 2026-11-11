@@ -20,21 +20,12 @@ export function readingTime(html: string) {
   return `${readingTimeMinutes} min read`;
 }
 
-export function dateRange(startDate: Date, endDate?: Date | string): string {
-  const startMonth = startDate.toLocaleString("default", { month: "short" });
-  const startYear = startDate.getFullYear().toString();
-  let endMonth;
-  let endYear;
-
-  if (endDate) {
-    if (typeof endDate === "string") {
-      endMonth = "";
-      endYear = endDate;
-    } else {
-      endMonth = endDate.toLocaleString("default", { month: "short" });
-      endYear = endDate.getFullYear().toString();
-    }
-  }
-
-  return `${startMonth}${startYear} - ${endMonth}${endYear}`;
+export function dateRange(startDate: Date, endDate?: Date | string, lang: "zh" | "en" = "en"): string {
+  const format = (date: Date) => lang === "zh"
+    ? `${date.getUTCFullYear()}.${String(date.getUTCMonth() + 1).padStart(2, "0")}`
+    : new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric", timeZone: "UTC" }).format(date);
+  const end = typeof endDate === "string"
+    ? (endDate === "Now" ? (lang === "zh" ? "至今" : "Present") : endDate)
+    : endDate ? format(endDate) : "";
+  return end ? `${format(startDate)} — ${end}` : format(startDate);
 }

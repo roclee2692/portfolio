@@ -5,6 +5,8 @@ role: "Model Evaluator · project-based"
 role_zh: "大模型众测评测员 · 项目制"
 dateStart: "2026-01-01"
 dateEnd: "Now"
+dateLabel: "2026 — Present"
+dateLabel_zh: "2026 — 至今"
 description_zh: "参与近 10 期模型众测，设计 Coding、Agent、长程任务与多轮对话的提示词和验收标准，复核工具调用、任务完成及错误恢复；全部评测获最高等级评价。"
 ---
 

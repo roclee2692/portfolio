@@ -28,8 +28,10 @@ const canonicalPath = stripLang(Astro.url.pathname);
 const enURL = new URL(localizePath(canonicalPath, "en"), Astro.site);
 const zhURL = new URL(localizePath(canonicalPath, "zh"), Astro.site);
 
-const { title, description, image = "/nano.png" } = Astro.props;
+const { title, description, image = "/og-portfolio.png" } = Astro.props;
 ---
+
+<script is:inline>document.documentElement.classList.add("js-enabled");</script>
 
 <!-- 语言自动识别（客户端兜底 + Cookie 记忆；生产环境由 Cloudflare 边缘函数先行） -->
 <script is:inline>

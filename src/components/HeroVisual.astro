@@ -1,0 +1,48 @@
+---
+import { useTranslations, type Lang } from "@i18n/ui";
+
+type Props = { lang: Lang; projectCount: number; patentCount: number };
+const { lang, projectCount, patentCount } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="hero-visual-wrap reveal" style="transition-delay:.24s">
+  <div class="hero-visual">
+    <div class="hero-visual-top">
+      <span>RESEARCH / ENGINEERING</span>
+      <span class="hero-visual-live"><span></span> {t("stats.status")}</span>
+    </div>
+    <svg class="hero-diagram" viewBox="0 0 560 410" fill="none" aria-hidden="true">
+      <defs>
+        <radialGradient id="hero-core-glow"><stop stop-color="#a78bfa" stop-opacity=".33"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
+        <linearGradient id="hero-flow" x1="90" y1="90" x2="450" y2="320" gradientUnits="userSpaceOnUse"><stop stop-color="#b7a4ff"/><stop offset="1" stop-color="#8be5d4"/></linearGradient>
+      </defs>
+      <circle cx="280" cy="198" r="188" fill="url(#hero-core-glow)"/>
+      <circle cx="280" cy="198" r="163" stroke="#dce0ff" stroke-opacity=".13"/>
+      <circle cx="280" cy="198" r="124" stroke="#dce0ff" stroke-opacity=".18" stroke-dasharray="3 9"/>
+      <circle cx="280" cy="198" r="84" stroke="#dce0ff" stroke-opacity=".17"/>
+      <path d="M111 256 C179 182 201 136 280 198 S382 264 449 126" stroke="url(#hero-flow)" stroke-opacity=".65" stroke-width="2"/>
+      <path d="M130 119 C194 158 238 293 329 252 S397 162 454 252" stroke="#dfd9ff" stroke-opacity=".24" stroke-width="1.5" stroke-dasharray="4 8"/>
+      <g class="hero-orbit"><circle cx="280" cy="35" r="5" fill="#b7a4ff"/><circle cx="280" cy="35" r="13" stroke="#b7a4ff" stroke-opacity=".35"/></g>
+      <circle cx="111" cy="256" r="7" fill="#a7f0e2"/><circle cx="449" cy="126" r="7" fill="#c7baff"/>
+      <circle cx="280" cy="198" r="49" fill="#161e39" stroke="#c9bfff" stroke-opacity=".6"/>
+      <circle cx="280" cy="198" r="35" fill="#a78bfa" fill-opacity=".12"/>
+      <path d="M260 198h40m-20-20v40" stroke="#e3dcff" stroke-width="2" stroke-linecap="round"/>
+      <rect x="80" y="109" width="122" height="38" rx="10" fill="#18243b" stroke="#93dfd4" stroke-opacity=".4"/>
+      <text x="141" y="133" text-anchor="middle" fill="#b5f0e7" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">RETRIEVE</text>
+      <rect x="364" y="263" width="110" height="38" rx="10" fill="#211f3e" stroke="#b8a8ff" stroke-opacity=".45"/>
+      <text x="419" y="287" text-anchor="middle" fill="#dfd6ff" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">EVALUATE</text>
+      <rect x="152" y="285" width="96" height="38" rx="10" fill="#1d2740" stroke="#c7d4ed" stroke-opacity=".32"/>
+      <text x="200" y="309" text-anchor="middle" fill="#e2e7f4" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">BUILD</text>
+    </svg>
+    <div class="hero-visual-bottom">
+      <div><p>{t("hero.visualLabel")}</p><strong>{t("hero.visualTitle")}</strong></div>
+      <span aria-hidden="true">↗</span>
+    </div>
+  </div>
+  <div class="hero-metrics">
+    <div><strong>{String(projectCount).padStart(2, "0")}</strong><span>{t("hero.metric.projects")}</span></div>
+    <div><strong>{String(patentCount).padStart(2, "0")}</strong><span>{t("hero.metric.patents")}</span></div>
+    <div><strong>RAG</strong><span>{t("hero.metric.focus")}</span></div>
+  </div>
+</div>

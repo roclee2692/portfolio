@@ -1,14 +1,19 @@
 ---
-import Link from "@components/Link.astro";
 import LangSwitch from "@components/LangSwitch.astro";
 import { SITE } from "@consts";
-import { useTranslations, langPrefix, type Lang } from "@i18n/ui";
+import { useTranslations, langPrefix, stripLang, type Lang } from "@i18n/ui";
 
 type Props = { lang: Lang };
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const p = langPrefix(lang);
 const name = lang === "zh" ? SITE.NAME : SITE.NAME_EN;
+const currentPath = stripLang(Astro.url.pathname);
+const navigation = [
+  { path: "/research", label: t("nav.research") },
+  { path: "/projects", label: t("nav.projects") },
+  { path: "/work", label: t("nav.work") },
+];
 ---
 
 <header>
@@ -19,11 +24,11 @@ const name = lang === "zh" ? SITE.NAME : SITE.NAME_EN;
       </span>
       <span class="hidden font-display font-semibold text-black dark:text-white sm:inline">{name}</span>
     </a>
-    <div class="flex items-center gap-3 sm:gap-5">
-      <nav class="flex items-center gap-4 font-mono text-sm sm:gap-5">
-        <Link href={`${p}/research`}>{t("nav.research")}</Link>
-        <Link href={`${p}/projects`}>{t("nav.projects")}</Link>
-        <Link href={`${p}/work`}>{t("nav.work")}</Link>
+    <div class="flex items-center gap-2.5 sm:gap-5">
+      <nav class="flex items-center gap-2.5 font-mono text-xs sm:gap-5 sm:text-sm" aria-label={lang === "zh" ? "主导航" : "Main navigation"}>
+        {navigation.map(item => (
+          <a href={`${p}${item.path}`} class="nav-link" aria-current={currentPath.startsWith(item.path) ? "page" : undefined}>{item.label}</a>
+        ))}
       </nav>
       <LangSwitch />
     </div>

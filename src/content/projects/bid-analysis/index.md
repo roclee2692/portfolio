@@ -5,6 +5,7 @@ description: "University–enterprise project: contributed to bid-document analy
 description_zh: "校企合作项目：解析招标要求，抽取企业资质与业绩，并支持多阶段匹配。相关发明专利已公布。"
 date: "2026-04-01"
 featured: true
+cover: "/covers/bid-analysis.svg"
 linkType: "private"
 stack: ["Python", "LLM", "RAG", "FastAPI"]
 highlight: "Invention patent published · enterprise software engineering"

@@ -53,6 +53,11 @@ const detailsZh = lang === "zh" ? projectDetailsZh[project.slug] : undefined;
         )
       )}
     </div>
+    {project.data.cover && (
+      <div class="animate mb-10 overflow-hidden rounded-3xl border border-[rgb(var(--line)/0.1)] bg-[#10162b]">
+        <img src={project.data.cover} alt="" class="mx-auto h-56 w-full object-contain sm:h-80 md:h-96" decoding="async" />
+      </div>
+    )}
     <article class="animate">
       {detailsZh ? (
         <>

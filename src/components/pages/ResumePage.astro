@@ -1,6 +1,6 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
-import { useTranslations, type Lang } from "@i18n/ui";
+import { langPrefix, useTranslations, type Lang } from "@i18n/ui";
 
 type Props = { lang: Lang };
 const { lang } = Astro.props;
@@ -11,6 +11,7 @@ const resumeUrl = "/files/li-peng-resume.pdf";
 <PageLayout title={t("resume.title")} description={t("resume.description")} lang={lang}>
   <div class="wrap-tight">
     <div class="reveal max-w-3xl">
+      <a href={`${langPrefix(lang)}/`} class="mb-6 inline-flex items-center gap-2 text-sm text-accent hover:underline"><span aria-hidden="true">←</span> {t("resume.back")}</a>
       <p class="eyebrow"><span class="eyebrow-dot"></span>PDF / RESUME</p>
       <h1 class="mt-4 font-display text-4xl font-semibold tracking-tight text-black dark:text-white sm:text-5xl">{t("resume.title")}</h1>
       <p class="mt-4 text-base leading-relaxed">{t("resume.description")}</p>

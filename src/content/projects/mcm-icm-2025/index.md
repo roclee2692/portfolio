@@ -19,4 +19,4 @@ Team solution (李鹏 · 张元冰 · 刘露, advisor 李园园; NCWU) for the *
 - **Q1** data cleaning + GAMM statistical modelling
 - **Q2** full Python analysis pipeline
 - **Q3** Monte-Carlo dynamic programming for decision optimization
-- **Q4** risk-constrained optimization & outputs
+- **Q4** female-fetus anomaly classification using grouped cross-validation, XGBoost, probability calibration and cost-sensitive thresholds

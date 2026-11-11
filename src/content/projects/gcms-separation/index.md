@@ -7,15 +7,17 @@ date: "2026-05-03"
 featured: true
 linkType: "repo"
 stack: ["Python", "1D-CNN", "PyTorch", "GC-MS", "Synthetic Data"]
-highlight: "87 monomers · 74,820 samples · ~99% blind-test accuracy (synthetic)"
-highlight_zh: "87 种单体 · 74,820 样本 · 合成盲测识别率约 99%"
+highlight: "87 monomers · 74,820 synthetic samples · real-mixture validation"
+highlight_zh: "87 种单体 · 74,820 条合成样本 · 真实混合样本验证"
 repoURL: "https://github.com/roclee2692/GC-MS-Signal-Separation"
 ---
 
-Enterprise-collaboration exploration: an end-to-end **1D-CNN** that deconvolves overlapping GC-MS signals of complex essential-oil mixtures and predicts the blend ratio of core raw materials — replacing manual expert peak-matching.
+Enterprise-collaboration exploration: an end-to-end **1D-CNN** for identifying components and estimating ratios from GC-MS signals of essential-oil mixtures.
 
 ## Approach & outcome
 
 - **Synthetic-data baseline**: scaled from 10 → **87 monomers**, all pairwise combinations → **74,820 samples**.
-- Reached **~99% identification accuracy on synthetic blind tests**.
-- **Archived** due to the lack of real enterprise data and a **Sim2Real domain gap** — a first-hand lesson that data quality is the crux of landing industrial AI.
+- An earlier 9-class synthetic experiment reached **99.44% order-invariant pair accuracy** on a single split; that evaluation set also guided early stopping and was not an independent blind test. Ratio prediction remained difficult.
+- In the later 87-class experiment, the unaugmented CNN recorded **88.96% order-invariant pair accuracy** on the synthetic evaluation split; the stronger-augmentation run recorded **29.00%** under different evaluation-input conditions. The evaluation split was also used for model selection, so these are not independent blind-test results.
+- In later tests on **three real mixtures**, four models made 12 predictions: one identified a single true component at Top-1, and none identified both. Stronger augmentation did not improve complete-pair recognition on those samples, illustrating the **Sim2Real domain gap**.
+- **Archived** due to limited labelled real-mixture data and the Sim2Real gap — a first-hand lesson in data-centric industrial AI.

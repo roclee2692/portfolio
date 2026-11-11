@@ -7,8 +7,8 @@ date: "2026-06-01"
 featured: true
 linkType: "repo"
 stack: ["Python", "RAG", "Contextual Embeddings", "BM25", "Knowledge Graph"]
-highlight: "3 phases · 6 controlled experiments · reproducible"
-highlight_zh: "3 阶段 · 6 组对照实验 · 全程可复现"
+highlight: "3 phases · 6 controlled comparisons"
+highlight_zh: "3 阶段 · 6 组对照实验"
 repoURL: "https://github.com/roclee2692/contextual-retrieval-by-anthropic"
 ---
 
@@ -20,6 +20,6 @@ Reproduced Anthropic's Contextual Retrieval (contextual embeddings + contextual 
 |---|---|---|
 | 1 | Canteen menu (structured lists) | Baseline vs CR vs Jieba+KG |
 | 2 | Flood-prevention plans (gov docs) | Baseline vs CR vs Deep KG |
-| 3 | Same, OneKE-13B + OpenKG | Knowledge-graph schema optimization |
+| 3 | Flood-prevention plans | OneKE-13B schema experiments and Baseline vs CR / reranker comparisons |
 
-**Core finding**: CR is a double-edged sword across data types; knowledge graphs still hit real bottlenecks under current conditions.
+**Findings and limits**: Results varied by query and configuration, while the knowledge-graph experiments encountered extraction-quality limitations. The 30-question Baseline vs CR result uses a keyword-hit metric, and the older reranker record has evaluation limitations. Later question-answering experiments in the project log used a different evaluation setup and should not be directly compared with those results. The flood-prevention source documents are not public, so those experiments cannot be fully reproduced from the repository alone.
